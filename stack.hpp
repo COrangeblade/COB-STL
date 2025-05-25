@@ -13,7 +13,7 @@ class stack{
 			for(unsigned i=1;i<=Top;++i) sta[i]=oth.sta[i];
 		}
 		~stack(){
-			delete sta;sta=nullptr;
+			delete sta,sta=nullptr;
 			maxsize=Top=0;
 		}
 		void clear(){
