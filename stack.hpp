@@ -30,7 +30,7 @@ class stack{
 				T* swp=sta;
 				sta=tmp;
 				tmp=swp;
-				for(unsigned i(1);i<=Top;++i) sta[i]=tmp[i];
+				for(unsigned i=1;i<=Top;++i) sta[i]=tmp[i];
 				delete tmp;
 				tmp=swp=nullptr;
 			}
