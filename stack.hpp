@@ -10,7 +10,7 @@ class stack{
 	public:
 		stack():sta(new T[4096]),Top(0),maxsize(4096){}
 		stack(const stack& oth):sta(new T[oth.maxsize]),Top(oth.Top),maxsize(oth.maxsize){
-			for(unsigned i(1);i<=Top;++i) sta[i]=oth.sta[i];
+			for(unsigned i=1;i<=Top;++i) sta[i]=oth.sta[i];
 		}
 		~stack(){
 			delete sta;
@@ -47,13 +47,13 @@ class stack{
 			return;
 		}
 		void swap(stack& oth){
-			T* swp_sta(this->sta);
+			T* swp_sta=this->sta;
 			this->sta=oth.sta;
 			oth.sta=swp_sta;
-			unsigned swp_maxsize(this->maxsize);
+			unsigned swp_maxsize=this->maxsize;
 			this->maxsize=oth.maxsize;
 			oth.maxsize=swp_maxsize;
-			unsigned swp_top(this->Top);
+			unsigned swp_top=this->Top;
 			this->Top=oth.Top;
 			oth.Top=swp_top;
 			return;
