@@ -7,6 +7,8 @@
 ### 下一步将实现：
 - **`array.hpp`**
 - **`vector.hpp`**
+- **`trie.hpp`**
+- **`bst.hpp`**
 ### 可能咕咕咕：
 - **`fibonacci_heap.hpp`**
 - **`priority_queue.hpp`**
@@ -14,3 +16,5 @@
 - **`hash_map.hpp`**
 - **`rbtree_set.hpp`**
 - **`hash_set.hpp`**
+- **`persistent-trie.hpp`**
+- **`persistent-bst.hpp`**
