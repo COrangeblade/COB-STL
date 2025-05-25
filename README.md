@@ -3,9 +3,9 @@
 ### 已实现：
 - **`list.hpp`**
 - **`stack.hpp`**
+- **`queue.hpp`**
 ### 下一步将实现：
 - **`array.hpp`**
-- **`queue.hpp`**
 - **`vector.hpp`**
 ### 可能咕咕咕：
 - **`fibonacci_heap.hpp`**
