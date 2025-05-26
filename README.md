@@ -4,8 +4,8 @@
 - **`list.hpp`**
 - **`stack.hpp`**
 - **`queue.hpp`**
-### 下一步将实现：
 - **`array.hpp`**
+### 下一步将实现：
 - **`vector.hpp`**
 - **`trie.hpp`**
 - **`bst.hpp`**
