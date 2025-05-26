@@ -46,6 +46,10 @@ class deque{
 			head=(head+maxsize-1)%maxsize;
 			return;
 		}
+		void clear(){
+			tail=1+(head=0);
+			return;
+		}
 		bool empty()const{return (head+1)%maxsize==tail;}
 		unsigned size()const{return (tail+maxsize-head-1)%maxsize;}
 		void pop_front(){
