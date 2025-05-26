@@ -71,6 +71,21 @@ class deque{
 		operator[](unsigned p){
 			return data[(head+1+p)%maxsize];
 		}
+		void swap(deque& oth){
+			T* swp_data=this->data;
+			this->data=oth.data;
+			oth.data=swp_data;
+			unsigned swp_maxsize=this->maxsize;
+			this->maxsize=oth.maxsize;
+			oth.maxsize=swp_maxsize;
+			unsigned swp_head=this->head;
+			this->head=oth.head;
+			oth.head=swp_head;
+			unsigned swp_tail=this->tail;
+			this->tail=oth.tail;
+			oth.tail=swp_tail;
+			return;
+		}
 };
 }
 #endif
