@@ -7,11 +7,11 @@
 - **`array.hpp`**
 - **`random.hpp`**
 - **`deque.hpp`**
+- **`monotonic-stack.hpp`**
 ### 下一步将实现：
 - **`vector.hpp`**
 - **`trie.hpp`**
 - **`bst.hpp`**
-- **`monotonic-stack.hpp`**
 - **`monotonic-queue.hpp`**
 - **`priority-queue.hpp`**
 - **`pair.hpp`**
