@@ -14,8 +14,8 @@ class list{
 		struct Node{
 			Node *pre,*next;T val;
 			Node(const T& v=T(),Node* p=nullptr,Node* n=nullptr)noexcept:val(v),pre(p),next(n){}
-			friend bool operator==(const Node&a,const Node&b)noexcept{return a.next==b.next&&a.pre==b.pre&&a.val==b.val;}
-			friend bool operator!=(const Node&a,const Node&b)noexcept{return !(a==b);}
+			friend bool operator==(const Node& a,const Node& b)noexcept{return a.next==b.next&&a.pre==b.pre&&a.val==b.val;}
+			friend bool operator!=(const Node& a,const Node& b)noexcept{return !(a==b);}
 		};
 		Node *head,*tail;std::size_t l;
 	public:
@@ -26,18 +26,18 @@ class list{
 		struct iterator;
 		struct r_iterator;
 	public:
-    	struct iterator{
-    		Node* ptr;
+		struct iterator{
+			Node* ptr;
 			iterator(Node* p=nullptr)noexcept:ptr(p){}
 			iterator(const iterator& p=iterator())noexcept:ptr(p.ptr){}
 			iterator(const r_iterator& p=r_iterator())noexcept:ptr(p.ptr){}
 			iterator& operator=(const iterator p)noexcept{ptr=p.ptr;return *this;}
 			iterator& operator=(const r_iterator p)noexcept{ptr=p.ptr;return *this;}
-        	iterator& operator++()noexcept{ptr=ptr->next;return *this;}
-        	iterator operator++(signed)noexcept{iterator tmp=*this;ptr=ptr->next;return tmp;}
-        	iterator& operator--()noexcept{ptr=ptr->pre;return *this;}
-        	iterator operator--(signed)noexcept{iterator tmp=*this;ptr=ptr->pre;return tmp;}
-        	friend iterator operator+(iterator it,int n)noexcept{
+			iterator& operator++()noexcept{ptr=ptr->next;return *this;}
+			iterator operator++(signed)noexcept{iterator tmp=*this;ptr=ptr->next;return tmp;}
+			iterator& operator--()noexcept{ptr=ptr->pre;return *this;}
+			iterator operator--(signed)noexcept{iterator tmp=*this;ptr=ptr->pre;return tmp;}
+			friend iterator operator+(iterator it,int n)noexcept{
 				while(it.ptr&&n--) ++it;
 				return it;
 			}
@@ -45,28 +45,28 @@ class list{
 				while(it.ptr&&n--) --it;
 				return it;
 			}
-        	T& operator*()noexcept{return ptr->val;}
-        	bool operator!=(const iterator& other)noexcept{return this->ptr!=other.ptr;}
-        	bool operator!=(const r_iterator& other)noexcept{return this->ptr!=other.ptr;}
-        	bool operator==(const iterator& other)noexcept{return this->ptr==other.ptr;}
-        	bool operator==(const r_iterator& other)noexcept{return this->ptr==other.ptr;}
-        	T* operator->()noexcept{return &(ptr->val);}
-        	friend iterator& operator+=(iterator&it,int n)noexcept{it=it+n;return it;}
+			T& operator*()noexcept{return ptr->val;}
+			bool operator!=(const iterator& other)noexcept{return this->ptr!=other.ptr;}
+			bool operator!=(const r_iterator& other)noexcept{return this->ptr!=other.ptr;}
+			bool operator==(const iterator& other)noexcept{return this->ptr==other.ptr;}
+			bool operator==(const r_iterator& other)noexcept{return this->ptr==other.ptr;}
+			T* operator->()noexcept{return &(ptr->val);}
+			friend iterator& operator+=(iterator&it,int n)noexcept{it=it+n;return it;}
 			friend iterator& operator-=(iterator&it,int n)noexcept{it=it-n;return it;}
-        };
-    public:
-    	struct r_iterator{
-    		Node* ptr;
+		};
+	public:
+		struct r_iterator{
+			Node* ptr;
 			r_iterator(Node*p=nullptr)noexcept:ptr(p){}
 			r_iterator(const iterator& p=iterator())noexcept:ptr(p.ptr){}
 			r_iterator(const r_iterator& p=r_iterator())noexcept:ptr(p.ptr){}
 			r_iterator& operator=(const iterator p)noexcept{ptr=p.ptr;return *this;}
 			r_iterator& operator=(const r_iterator p)noexcept{ptr=p.ptr;return *this;}
-        	r_iterator& operator++()noexcept{ptr=ptr->pre;return *this;}
-        	r_iterator operator++(signed)noexcept{r_iterator tmp=*this;ptr=ptr->pre;return tmp;}
-        	r_iterator& operator--()noexcept{ptr=ptr->next;return *this;}
-        	r_iterator operator--(signed)noexcept{r_iterator tmp=*this;ptr=ptr->next;return tmp;}
-        	friend r_iterator operator+(r_iterator it,int n)noexcept{
+			r_iterator& operator++()noexcept{ptr=ptr->pre;return *this;}
+			r_iterator operator++(signed)noexcept{r_iterator tmp=*this;ptr=ptr->pre;return tmp;}
+			r_iterator& operator--()noexcept{ptr=ptr->next;return *this;}
+			r_iterator operator--(signed)noexcept{r_iterator tmp=*this;ptr=ptr->next;return tmp;}
+			friend r_iterator operator+(r_iterator it,int n)noexcept{
 				while(it.ptr&&n--) ++it;
 				return it;
 			}
@@ -74,24 +74,24 @@ class list{
 				while(it.ptr&&n--) --it;
 				return it;
 			}
-        	T& operator*()noexcept{return ptr->val;}
-        	bool operator!=(const r_iterator& other)noexcept{return this->ptr!=other.ptr;}
-        	bool operator!=(const iterator& other)noexcept{return this->ptr!=other.ptr;}
-        	bool operator==(const r_iterator& other)noexcept{return this->ptr==other.ptr;}
-        	bool operator==(const iterator& other)noexcept{return this->ptr==other.ptr;}
-        	T* operator->()noexcept{return &(ptr->val);}
-        	friend r_iterator& operator+=(r_iterator&it,int n)noexcept{it=it+n;return it;}
+			T& operator*()noexcept{return ptr->val;}
+			bool operator!=(const r_iterator& other)noexcept{return this->ptr!=other.ptr;}
+			bool operator!=(const iterator& other)noexcept{return this->ptr!=other.ptr;}
+			bool operator==(const r_iterator& other)noexcept{return this->ptr==other.ptr;}
+			bool operator==(const iterator& other)noexcept{return this->ptr==other.ptr;}
+			T* operator->()noexcept{return &(ptr->val);}
+			friend r_iterator& operator+=(r_iterator&it,int n)noexcept{it=it+n;return it;}
 			friend r_iterator& operator-=(r_iterator&it,int n)noexcept{it=it-n;return it;}
-        };
-    public:
-    	list()noexcept:head(new Node()),tail(new Node()),l(0){head->pre=head->next=tail,tail->next=tail->pre=head;}
-    	list(const list& other)noexcept:head(new Node()),tail(new Node()),l(0){
-    		head->next=tail,tail->pre=head;
-    		if(this==&other) return;
-    		for(auto it=other.cbegin();it!=other.cend();++it) this->push_back(*it);
+		};
+	public:
+		list()noexcept:head(new Node()),tail(new Node()),l(0){head->pre=head->next=tail,tail->next=tail->pre=head;}
+		list(const list& other)noexcept:head(new Node()),tail(new Node()),l(0){
+			head->next=tail,tail->pre=head;
+			if(this==&other) return;
+			for(auto it=other.cbegin();it!=other.cend();++it) this->push_back(*it);
 		}
-    	list(const std::initializer_list<T>& init_list)noexcept:head(new Node()),tail(new Node()),l(0){
-    		head->next=tail,tail->pre=head;
+		list(const std::initializer_list<T>& init_list)noexcept:head(new Node()),tail(new Node()),l(0){
+			head->next=tail,tail->pre=head;
 			for(const auto& i:init_list) this->push_back(i);
 		}
 		~list()noexcept{
@@ -214,12 +214,12 @@ void list<T>::insert(r_iterator it,const T& val)noexcept{
 }
 template<typename T>
 T list<T>::erase(auto it)noexcept{
-    if(empty()) return T();
+	if(empty()) return T();
 	Node*cur=it.ptr;
-    if(cur==nullptr||cur==head||cur==tail) return T();
-    cur->pre->next=cur->next;cur->next->pre=cur->pre;
-    T v=cur->val;Free(cur);--l;
-    return v;
+	if(cur==nullptr||cur==head||cur==tail) return T();
+	cur->pre->next=cur->next;cur->next->pre=cur->pre;
+	T v=cur->val;Free(cur);--l;
+	return v;
 }
 template<typename T>
 T& list<T>::front()noexcept{return head->next->val;}
@@ -247,30 +247,30 @@ template<typename T>
 const auto list<T>::crend()const noexcept{return r_iterator(head);}
 template<typename T>
 void list<T>::sort(const std::function<bool(const T&,const T&)>&comp)noexcept{
-    this->sort(this->begin(),this->end(),comp);
+	this->sort(this->begin(),this->end(),comp);
 	return;
 }
 template<typename T>
 void list<T>::sort(iterator b,iterator e,const std::function<bool(const T&,const T&)>&comp)noexcept{
-    std::vector<T> arr;
-    while(b!=e){
-    	auto it=b++;
-    	arr.push_back(erase(it));
+	std::vector<T> arr;
+	while(b!=e){
+		auto it=b++;
+		arr.push_back(erase(it));
 	}
-    std::sort(arr.begin(),arr.end(),comp);
-    for(auto i:arr) this->insert(b,i);
-    return;
+	std::sort(arr.begin(),arr.end(),comp);
+	for(auto i:arr) this->insert(b,i);
+	return;
 }
 template<typename T>
 void list<T>::sort(r_iterator b,r_iterator e,const std::function<bool(const T&,const T&)>&comp)noexcept{
-    std::vector<T> arr;
-    while(b!=e){
-    	auto it=b++;
-    	arr.push_back(erase(it));
+	std::vector<T> arr;
+	while(b!=e){
+		auto it=b++;
+		arr.push_back(erase(it));
 	}
-    std::sort(arr.begin(),arr.end(),comp);
-    for(auto i:arr) this->insert(b,i);
-    return;
+	std::sort(arr.begin(),arr.end(),comp);
+	for(auto i:arr) this->insert(b,i);
+	return;
 }
 template<typename T>
 void list<T>::merge(list<T>& other,const std::function<bool(const T&,const T&)>& comp)noexcept{
