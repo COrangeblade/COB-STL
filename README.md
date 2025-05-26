@@ -14,6 +14,7 @@
 - **`monotonic-queue.hpp`**
 - **`priority-queue.hpp`**
 - **`pair.hpp`**
+- **`deque.hpp`**
 ### 可能咕咕咕：
 - **`fibonacci-heap.hpp`**
 - **`rbtree-map.hpp`**
@@ -22,5 +23,4 @@
 - **`hash-set.hpp`**
 - **`persistent-trie.hpp`**
 - **`persistent-bst.hpp`**
-- **`deque.hpp`**
 - **`tuple.hpp`**
