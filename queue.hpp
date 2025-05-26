@@ -23,6 +23,7 @@ class queue{
 		unsigned size()const{return ((tail-head)%maxsize+maxsize)%maxsize;}
 		void push(const T& x){
 			if((tail+1)%maxsize==head){
+				tail+=maxsize;
 				unsigned len=maxsize;
 				maxsize<<=1;
 				T* tmp=new T[maxsize];
