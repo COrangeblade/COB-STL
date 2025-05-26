@@ -5,8 +5,8 @@
 - **`stack.hpp`**
 - **`queue.hpp`**
 - **`array.hpp`**
-### 下一步将实现：
 - **`random.hpp`**
+### 下一步将实现：
 - **`vector.hpp`**
 - **`trie.hpp`**
 - **`bst.hpp`**
