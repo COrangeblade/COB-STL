@@ -6,6 +6,7 @@
 - **`queue.hpp`**
 - **`array.hpp`**
 - **`random.hpp`**
+- **`deque.hpp`**
 ### 下一步将实现：
 - **`vector.hpp`**
 - **`trie.hpp`**
@@ -14,7 +15,6 @@
 - **`monotonic-queue.hpp`**
 - **`priority-queue.hpp`**
 - **`pair.hpp`**
-- **`deque.hpp`**
 ### 可能咕咕咕：
 - **`fibonacci-heap.hpp`**
 - **`ordered-map.hpp`**
