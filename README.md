@@ -25,3 +25,5 @@
 - **`persistent-trie.hpp`**
 - **`persistent-bst.hpp`**
 - **`tuple.hpp`**
+
+#### 注：有部分将会使用原版 STL 以降低性能损失。
