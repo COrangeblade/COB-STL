@@ -8,8 +8,9 @@
 - **`random.hpp`**
 - **`deque.hpp`**
 - **`monotonic-stack.hpp`**
-### 下一步将实现：
+### 未完工：
 - **`poly.hpp`**
+### 下一步将实现：
 - **`vector.hpp`**
 - **`trie.hpp`**
 - **`bst.hpp`**
