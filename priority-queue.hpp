@@ -44,6 +44,11 @@ namespace COB{
 				return;
 			}
 		public:
+			typedef std::size_t size_type;
+			typedef _Tp value_type;
+			typedef _Tp& reference;
+			typedef const _Tp& const_reference;
+		public:
 			priority_queue(_Cmp comp=_Cmp()):root(nullptr),sz(0),cmp(comp){}
 			priority_queue(const priority_queue& oth,_Cmp comp=_Cmp()){
 				root=nullptr,sz=oth.sz,cmp=comp;
@@ -53,8 +58,8 @@ namespace COB{
 				root=nullptr,sz=init.size(),cmp=comp;
 				for(const auto& i:init) root=merge(root,new Node(i));
 			}
-			priority_queue(std::priority_queue<_Tp> q){
-				root=nullptr,sz=q.size();
+			priority_queue(std::priority_queue<_Tp> q,_Cmp comp=_Cmp()){
+				root=nullptr,sz=q.size(),cmp=comp;
 				while(!q.empty()) root=merge(root,new Node(q.top())),q.pop();
 			}
 			~priority_queue(){
