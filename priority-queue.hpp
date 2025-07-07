@@ -15,14 +15,10 @@ namespace COB{
 				Node(_Tp v):ch{nullptr,nullptr},val(v),dist(0){}
 				~Node(){ch[0]=ch[1]=nullptr;}
 			};
-			Node *root;
-			_Cmp cmp;
-			std::size_t sz;
-			int dist(Node* p){
-				return p==nullptr? -1:p->dist;
-			}
+			Node *root;_Cmp cmp;std::size_t sz;
+			int dist(Node* p)const{return p==nullptr? -1:p->dist;}
 			Node* merge(Node* x,Node* y){
-				if(x==nullptr||y==nullptr) return (x==nullptr? y:x);
+				if(x==nullptr||y==nullptr) return x==nullptr? y:x;
 				if(cmp(x->val,y->val)) std::swap(x,y);
 				x->ch[1]=merge(x->ch[1],y);
 				if(dist(x->ch[0])<dist(x->ch[1])) std::swap(x->ch[0],x->ch[1]);
@@ -71,9 +67,7 @@ namespace COB{
 				sz=q.size();
 				return *this;
 			}
-			const _Tp& top()const{
-				return root->val;
-			}
+			const _Tp& top()const{return root->val;}
 			void push(const _Tp& x){
 				++sz;
 				root=merge(root,new Node(x));
