@@ -8,6 +8,7 @@
 - **`random.hpp`**
 - **`deque.hpp`**
 - **`monotonic-stack.hpp`**
+- **`priority-queue.hpp`**
 ### 未完工：
 - **`poly.hpp`**
 ### 下一步将实现：
@@ -15,7 +16,6 @@
 - **`trie.hpp`**
 - **`bst.hpp`**
 - **`monotonic-queue.hpp`**
-- **`priority-queue.hpp`**
 - **`pair.hpp`**
 ### 可能咕咕咕：
 - **`fibonacci-heap.hpp`**
