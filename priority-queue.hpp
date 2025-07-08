@@ -3,14 +3,13 @@
 #include<functional>
 #include<initializer_list>
 #include<queue>
+#include"queue.hpp"
 namespace COB{
 	template<typename _Tp,typename _Cmp=std::less<_Tp>>
 	class priority_queue{
 		private:
 			struct Node{
-				Node *ch[2];
-				_Tp val;
-				int dist;
+				Node *ch[2];_Tp val;int dist;
 				Node():ch{nullptr,nullptr},val(_Tp()),dist(0){}
 				Node(_Tp v):ch{nullptr,nullptr},val(v),dist(0){}
 				~Node(){ch[0]=ch[1]=nullptr;}
@@ -38,6 +37,23 @@ namespace COB{
 				clear(p->ch[1]);
 				delete p;p=nullptr;
 				return;
+			}
+			bool erase(Node* p,const _Tp& k){
+				queue<Node**> q;
+				q.push(&p);
+				while(!q.empty()){
+					Node** u=q.front();q.pop();
+					if(!*u) continue;
+					if((*u)->val==k){
+						Node *lc=(*u)->ch[0],*rc=(*u)->ch[1];
+						delete *u;
+						*u=merge(lc,rc);
+						--sz;
+						return true;
+					}
+					q.push((*u)->ch),q.push((*u)->ch+1);
+				}
+				return false;
 			}
 		public:
 			typedef std::size_t size_type;
@@ -82,9 +98,7 @@ namespace COB{
 			}
 			void join(priority_queue& q){
 				root=merge(root,q.root);
-				q.root=nullptr;
-				sz+=q.sz;
-				q.sz=0;
+				q.root=nullptr,sz+=q.sz,q.sz=0;
 				return;
 			}
 			void swap(priority_queue& q){
@@ -100,6 +114,7 @@ namespace COB{
 				clear(root);
 				return;
 			}
+			bool erase(const _Tp& k){return erase(root,k);}
 	};
 }
 #endif
