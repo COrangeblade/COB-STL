@@ -1,5 +1,5 @@
-# COB\<Standard Template Library\>
-## COB写的标准模板库
+# COB \<Standard Template Library\>
+## COB 写的数据结构标准模板库
 ### 已实现：
 - **`list.hpp`**
 - **`stack.hpp`**
