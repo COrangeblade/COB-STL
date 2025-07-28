@@ -14,6 +14,7 @@
 - **`persistent-heap.hpp`**
 ### 下一步将实现：
 - **`vector.hpp`**
+- **`mod-integer.hpp`**
 - **`trie.hpp`**
 - **`tree.hpp`**
 - **`monotonic-queue.hpp`**
