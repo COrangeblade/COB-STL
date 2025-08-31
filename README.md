@@ -12,9 +12,9 @@
 ### 待完善：
 - **`poly.hpp`**
 - **`persistent-heap.hpp`**
+- **`bitset.hpp`**
 ### 下一步将实现：
 - **`vector.hpp`**
-- **`bitset.hpp`**
 - **`mod-integer.hpp`**
 - **`trie.hpp`**
 - **`tree.hpp`**
