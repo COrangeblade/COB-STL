@@ -14,6 +14,7 @@
 - **`persistent-heap.hpp`**
 ### 下一步将实现：
 - **`vector.hpp`**
+- **`bitset.hpp`**
 - **`mod-integer.hpp`**
 - **`trie.hpp`**
 - **`tree.hpp`**
@@ -21,7 +22,7 @@
 - **`pair.hpp`**
 - **`unordered-map.hpp`**
 - **`unordered-set.hpp`**
-### 可能咕咕咕：
+### 可能咕咕咕八百年都不会写：
 - **`fibonacci-heap.hpp`**
 - **`persistent-trie.hpp`**
 - **`persistent-bst.hpp`**
